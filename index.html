@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Generator</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <p>Количество действий</p>
+            <input class="dificult" type="text" name="dificult" value="2">
+            <div class="var">
+                <p>Выражения (через запятую)</p>
+                <input class="variables" type="text" name="variables" value="a, b, c">
+            </div>
+            <button>Генерировать!</button>
+            <div class="res">
+                <p>Результат:</p>
+                <p class="res__data"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
