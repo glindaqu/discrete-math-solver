@@ -30,7 +30,6 @@ const main = (dificult, variables) => {
 $('.container button').on('click', () => {
     let dificult = Number($('.dificult').val());
     let variables = $('.variables').val().replaceAll(" ", "").split(",");
-    console.log(variables);
     $('.res__data').text(main(dificult, variables));
 });
 
