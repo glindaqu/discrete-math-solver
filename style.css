@@ -20,9 +20,10 @@ body {
 .container button {
     margin-top: 25px;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px 25px;
     border-radius: 15px;
     border-color: bisque;
+    width: 200px;
 }
 
 .var {
@@ -39,6 +40,24 @@ body {
 .res {
     margin-top: 35px;
     text-align:center;
+}
+
+.res__data {
+    font-size: 100%;
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 25px;
+    }
+    
+    .container button {
+        padding: 5px 10px;
+    }
+    
+    .variables, .dificult {
+        padding: 10px 15px;
+    }
 }
 
 @media (max-width: 390px) {
