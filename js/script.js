@@ -1,5 +1,4 @@
-let change = false;
-
+let change = eval(localStorage.getItem("isChange"));
 if (localStorage.getItem("bg-color")) {
     $('body').css('background-color', localStorage.getItem("bg-color"));
     $('body, .variables, .dificult, .subtitle, .calc').css('color', localStorage.getItem("text-color"));
@@ -28,7 +27,7 @@ function playScale(selector) {
 }
 
 function switchTheme() {
-    change = !change;
+    change = !eval(localStorage.getItem("isChange"));
     if (change) {
         localStorage.setItem("bg-color", "#3812aa98");
         localStorage.setItem("text-color", "rgb(255,255,170)");
@@ -37,13 +36,13 @@ function switchTheme() {
         localStorage.setItem("bg-color", "#e1d9ce");
         localStorage.setItem("text-color", "black");
     }
+    
     localStorage.setItem("isChange", change);
+
     $('body').css('background-color', localStorage.getItem("bg-color"));
     $('body, .variables, .dificult, .subtitle, .calc').css('color', localStorage.getItem("text-color"));
     $('body, .variables, .dificult, .subtitle, .calc').css('transition', '1.5s ease');
     //$('.calc').css('background-color', change ? "" : "rgba(79,69,103, .55)");
-
-
 }
 
 $('.owl').on('click', () => {
