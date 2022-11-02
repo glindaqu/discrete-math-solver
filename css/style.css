@@ -80,6 +80,8 @@ footer {
 
 .footer__icons_item {
     margin: 0 7px 0 7px;
+    height: 64px;
+    width: 64px;
 }
 
 
