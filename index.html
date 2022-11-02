@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&family=Open+Sans&display=swap"
+        rel="stylesheet">
     <title>Generator</title>
 </head>
+<div class="container">
 
-<body>
-    <div class="wrapper">
-        <div class="container">
-                <p>Количество используемых выражений</p>
-            <input class="dificult" type="text" name="dificult" value="2">
-            <div class="var">
-                <p>Выражения (через запятую)</p>
-                <input class="variables" type="text" name="variables" value="a, b, c">
-            </div>
-            <button>Генерировать!</button>
-            <div class="res">
-                <p>Результат:</p>
-                <p class="res__data"></p>
+    <body>
+        <div class="wrapper">
+            <div class="inner__container">
+                <p class="title">Количество используемых выражений</p>
+                <input class="dificult" type="text" name="dificult" value="2">
+                <div class="var">
+                    <p class="title">Выражения</p>
+                    <p class="subtitle">через запятую</p>
+                    <input class="variables" type="text" name="variables" value="a, b, c">
+                </div>
+                <button class="calc">Генерировать!</button>
+                <div class="res">
+                    <p>Результат:</p>
+                    <p class="res__data">o v o</p>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
+    </body>
+
+    <footer>
+        <div class="footer__icons">
+            <img class="footer__icons_item owl" src="images/owl.png">
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="js/animejs/anime-master/lib/anime.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/script.js"></script>
+</div>
 
 </html>
