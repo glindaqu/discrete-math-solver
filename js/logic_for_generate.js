@@ -1,4 +1,4 @@
-let operations = ['∧', 'v', '=>', '<=>'];
+let operations = ['&&', '||', '→', '⇔'];
 
 const getRandomElement = (arr, len) => arr[Math.floor(Math.random() * len)];
 const getInversion = () => Math.random() * 2 > 1 ? '!' : ``;

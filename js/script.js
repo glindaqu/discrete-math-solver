@@ -40,9 +40,8 @@ function switchTheme() {
     localStorage.setItem("isChange", change);
 
     $('body').css('background-color', localStorage.getItem("bg-color"));
-    $('body, .variables, .dificult, .subtitle, .calc').css('color', localStorage.getItem("text-color"));
-    $('body, .variables, .dificult, .subtitle, .calc').css('transition', '1.5s ease');
-    //$('.calc').css('background-color', change ? "" : "rgba(79,69,103, .55)");
+    $('body, .variables, .dificult, .subtitle, .calc, .expression').css('color', localStorage.getItem("text-color"));
+    $('body, .variables, .dificult, .subtitle, .calc, .expression').css('transition', '1.5s ease');
 }
 
 $('.owl').on('click', () => {

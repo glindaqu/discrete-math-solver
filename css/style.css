@@ -84,7 +84,14 @@ footer {
     width: 64px;
 }
 
-
+table {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
 
 @media (max-width: 1024px) {
     body {
@@ -96,7 +103,8 @@ footer {
     }
 
     .variables,
-    .dificult {
+    .dificult, 
+    .expression {
         padding: 10px 15px;
     }
 }
