@@ -36,10 +36,10 @@ function getValue(exp, firstExp) {
 
     for (let j = 0; j<combinations.length; j++) {
         let finalExp = exp;
-            for (let i = 0; i < variables.length; i++) {
-                finalExp = finalExp.replaceAll(variables[i], combinations[j][i]);
-                for (let item of arr.keys()) {
-                    finalExp = finalExp.replaceAll(item, arr.get(item)[j]);
+        for (let i = 0; i < variables.length; i++) {
+            finalExp = finalExp.replaceAll(variables[i], combinations[j][i]);
+            for (let item of arr.keys()) {
+                finalExp = finalExp.replaceAll(item, arr.get(item)[j]);
             }
         }
         res.push(Number(eval(finalExp)));
@@ -84,8 +84,10 @@ function equals(arrOfValues) {
 function main(exp) {
     exp = exp.replaceAll(" ", "");
 
-    if(exp.match(reg)) {
-        let current = exp.match(reg)[0].replaceAll("(", "").replaceAll(")", "");
+    while(exp.match(reg)) {
+        let current = exp.match(reg)[0].replace("(", "").replace(")", "");
+        console.log(current)
+        console.log(" ")
         let name = makeRandStr(4);
         arr.set(name, main(current));
         exp = exp.replace("(" + current + ")", name)
