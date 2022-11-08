@@ -86,11 +86,9 @@ function main(exp) {
 
     while(exp.match(reg)) {
         let current = exp.match(reg)[0].replace("(", "").replace(")", "");
-        console.log(current)
-        console.log(" ")
         let name = makeRandStr(4);
         arr.set(name, main(current));
-        exp = exp.replace("(" + current + ")", name)
+        exp = exp.replace("(" + current + ")", name);
     }
 
     // если есть и эквиваленция и импликация
