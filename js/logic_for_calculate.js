@@ -1,3 +1,18 @@
+let reg = /\(([^()]*)\)/g;
+let arr = new Map();
+let count = null;
+
+function makeRandStr(length) {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+
 // функция для получения всех возможных комбинаций "0" и "1" для неопределенного кол-ва переменных
 function getArrOfValues(exp, variables) {
     let res = [];
@@ -19,10 +34,13 @@ function getValue(exp, firstExp) {
     let combinations = getArrOfValues(firstExp, variables);
     let res = [];
 
-    for (let combination of combinations) {
+    for (let j = 0; j<combinations.length; j++) {
         let finalExp = exp;
-        for (let i = 0; i < variables.length; i++) {
-            finalExp = finalExp.replaceAll(variables[i], combination[i]);
+            for (let i = 0; i < variables.length; i++) {
+                finalExp = finalExp.replaceAll(variables[i], combinations[j][i]);
+                for (let item of arr.keys()) {
+                    finalExp = finalExp.replaceAll(item, arr.get(item)[j]);
+            }
         }
         res.push(Number(eval(finalExp)));
     }
@@ -66,6 +84,13 @@ function equals(arrOfValues) {
 function main(exp) {
     exp = exp.replaceAll(" ", "");
 
+    if(exp.match(reg)) {
+        let current = exp.match(reg)[0].replaceAll("(", "").replaceAll(")", "");
+        let name = makeRandStr(4);
+        arr.set(name, main(current));
+        exp = exp.replace("(" + current + ")", name)
+    }
+
     // если есть и эквиваленция и импликация
     if (exp.includes("<=>") && exp.includes("->")) {
         let withoutEqual = exp.split("<=>");
@@ -83,11 +108,11 @@ function main(exp) {
         }
 
         for (let item of withoutImplication) {
-            resWithoutImplication.push(getValue(item, exp));
+            resWithoutImplication.push(getValue(item, count?count:exp));
         }
 
         for (let item of newWithoutEqual) {
-            resWithoutEqual = getValue(item, exp);
+            resWithoutEqual = getValue(item, count?count:exp);
         }
 
         let resI = implication(resWithoutImplication);
@@ -102,7 +127,7 @@ function main(exp) {
         let resWithoutEqual = [];
 
         for (let item of withoutEqual) {
-            resWithoutEqual.push(getValue(item, exp));
+            resWithoutEqual.push(getValue(item, count?count:exp));
         }
         return equals(resWithoutEqual);
 
@@ -114,7 +139,7 @@ function main(exp) {
         let resWithoutImplication = [];
 
         for (let item of withoutImplication) {
-            resWithoutImplication.push(getValue(item, exp));
+            resWithoutImplication.push(getValue(item, count?count:exp));
         }
 
         return implication(resWithoutImplication);
@@ -123,13 +148,19 @@ function main(exp) {
 
     // нет ни эквиваленции, ни импликации
     else {
-        return getValue(exp, exp);
+        return getValue(exp, count?count:exp);
     }
+}
+
+function final(exp) {
+    arr = new Map();
+    count = exp;
+    return main(exp);
 }
 
 $('.calc').on('click', () => {
     let exp = $('.expression').val();
-    let res = main(exp);
+    let res = final(exp);
     $('.res__data').empty();
     for (let item of res) {
         $('.res__data').append(`<tr><td>${item}</td></tr>`);
