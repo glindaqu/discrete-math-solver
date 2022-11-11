@@ -28,8 +28,6 @@ function getArrOfValues(exp, variables) {
 
 // функция для получения значения данного выражения
 function getValue(exp, firstExp) {
-    exp = exp.replaceAll("v", "||").replaceAll("∧", "&&");
-
     let variables = Array.from(new Set(firstExp.match(/[a-u]/g))).sort();
     let combinations = getArrOfValues(firstExp, variables);
     let res = [];
@@ -83,6 +81,9 @@ function equals(arrOfValues) {
 // основная функция
 function main(exp) {
     exp = exp.replaceAll(" ", "");
+    exp = exp.replaceAll("∨", "||").replaceAll("∧", "&&");
+    exp = exp.replaceAll("+", "||").replaceAll("*", "&&");
+    exp = exp.replaceAll("→", "->").replaceAll("⇔", "<=>");
 
     while(exp.match(reg)) {
         let current = exp.match(reg)[0].replace("(", "").replace(")", "");
