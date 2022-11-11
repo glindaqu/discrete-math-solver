@@ -27,9 +27,9 @@ const main = (dificult, variables) => {
     return res;
 };
 
-$('.container button').on('click', () => {
+$('.calc').on('click', () => {
     let dificult = Number($('.dificult').val());
     let variables = $('.variables').val().replaceAll(" ", "").split(",");
-    $('.res__data').text(main(dificult, variables));
+    $('.res__data').val(main(dificult, variables));
 });
 

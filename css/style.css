@@ -19,7 +19,7 @@ body {
     height: 100%;
 }
 
-.inner__container button {
+.inner__container .calc {
     margin-top: 25px;
     cursor: pointer;
     padding: 10px 25px !important;
@@ -57,12 +57,34 @@ body {
 .res {
     margin-top: 35px;
     text-align: center;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle__res {
+    margin: auto;
+}
+
+.copy_paste__btn {
+    margin: auto;
+    height: 24px;
+    width: 24px;
+    vertical-align:text-top;
+    margin-left: 12px;
 }
 
 .res__data {
     font-size: 100%;
     text-shadow: none !important;
     font-weight: bold;
+    border: none;
+    background-color: #e1d9ce;
+    background: transparent;
+    text-align: center;
+    margin-top: 25px;
+    outline: none;
 }
 
 footer {
