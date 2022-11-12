@@ -87,6 +87,10 @@ body {
     outline: none;
 }
 
+.res__item {
+    margin:0;
+}
+
 footer {
     position: absolute;
     left: 0;

@@ -10,5 +10,5 @@ $.getJSON("../data.json", data => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    $('body, .variables, .dificult, .subtitle, .calc, .expression').css('color', localStorage.getItem("text-color"));
+    $('body, .variables, .dificult, .subtitle, .calc, .expression, input.res__data').css('color', localStorage.getItem("text-color"));
 });

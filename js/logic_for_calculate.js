@@ -164,7 +164,7 @@ $('.calc').on('click', () => {
     let res = final(exp);
     $('.res__data').empty();
     for (let item of res) {
-        $('.res__data').append(`<tr><td>${item}</td></tr>`);
+        $('.res__data').append(`<tr><td><p class="res__item">${item}</p></td></tr>`);
     }
 });
 
