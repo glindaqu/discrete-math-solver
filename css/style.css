@@ -288,10 +288,12 @@ footer p {
 
     .menu_item:after {
         content: "";
+        display: none;
     }
 
     .menu_item:hover:after {
         content: "";
+        display: none;
     }
 }
 

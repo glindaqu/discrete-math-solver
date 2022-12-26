@@ -105,7 +105,7 @@ $('.open_btn').click(() => {
 });
 
 $('.menu').click(() => {
-    if (window.matchMedia('max-width: 768px').matches) {
+    if (window.matchMedia('(max-width: 768px)').matches) {
         openClose(condition);
         condition = !condition;
     }
