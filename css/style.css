@@ -317,6 +317,24 @@ footer p {
     }
 }
 
+@media (max-width: 423px) {
+    .var
+    .res p{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 24px;
+    }
+
+    .res img {
+        margin: 0 5px;
+    }
+
+    .copy_paste__btn {
+        margin: 15px auto;
+    }
+}
+
 @media (max-width: 255px) {
     body {
         font-size: 12px;

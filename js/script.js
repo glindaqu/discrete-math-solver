@@ -101,7 +101,6 @@ $('.owl').on('click', () => {
 $('.open_btn').click(() => {
     openClose(condition);
     condition = !condition;
-    console.log('click');
 });
 
 $('.menu').click(() => {
@@ -110,3 +109,7 @@ $('.menu').click(() => {
         condition = !condition;
     }
 });
+
+if (window.matchMedia('(max-width: 423px)').matches) {
+    $('.res').html('<p class="subtitle__res">Результат:<br><img class="copy_paste__btn" src="images/copy.png" onClick="CopyText()"></p>');
+}
