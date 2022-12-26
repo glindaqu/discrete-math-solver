@@ -5,6 +5,7 @@ function whatsNew() {
 $.getJSON("../data.json", data => {
     if (localStorage.getItem("version") != data.version) {
         whatsNew();
+        localStorage.clear();
         localStorage.setItem("version", data.version);
     } 
 });
