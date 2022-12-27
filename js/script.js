@@ -113,5 +113,3 @@ $('.menu').click(() => {
 if (window.matchMedia('(max-width: 423px)').matches && location.pathname === "/Examples-generator/index.html") {
     $('.res').html('<p class="subtitle__res">Результат:<br><img class="copy_paste__btn" src="images/copy.png" onClick="CopyText()"></p>');
 }
-
-console.log(window.location);
