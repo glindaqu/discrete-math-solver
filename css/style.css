@@ -221,6 +221,16 @@ table {
     .expression {
         padding: 10px 15px;
     }
+
+    .menu_item:after {
+        content: "";
+        display: none;
+    }
+
+    .menu_item:hover:after {
+        content: "";
+        display: none;
+    }
 }
 
 footer {
@@ -284,16 +294,6 @@ footer p {
 
     .menu_item:first-child {
         margin-top: 30vh;
-    }
-
-    .menu_item:after {
-        content: "";
-        display: none;
-    }
-
-    .menu_item:hover:after {
-        content: "";
-        display: none;
     }
 }
 
