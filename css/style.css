@@ -157,9 +157,9 @@ body {
     display: block;
     position: absolute;
     right: 0;
-    bottom: -970%;
+    bottom: -33px;
     width: 0;
-    height: 3px;
+    height: 4px;
     background-color: rgba(225, 217, 206, 0.72);
     transition: width 0.5s;
 }
@@ -170,8 +170,8 @@ body {
     display: block;
     position: absolute;
     left: 0;
-    bottom: -970%;
-    height: 3px;
+    bottom: -33px;
+    height: 4px;
     background-color: rgba(0, 0, 0, 0.66);
     transition: width 0.5s;
 }
