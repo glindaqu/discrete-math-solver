@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,21 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&family=Open+Sans&display=swap"
           rel="stylesheet">
+          <link rel="stylesheet" href="css/keyboard.css">
     <title>Generator</title>
 </head>
 
 <div class="menu_wrapper">
-    <div class="open_btn">
+    <div class="open_btn dis_class">
         <div class="stick"></div>
         <div class="stick"></div>
         <div class="stick"></div>
     </div>
-    <div class="menu">
-        <a href="calc.html"><div class="menu_item">Калькулятор</div></a>
-        <a href="index.html"><div class="menu_item">Генератор</div></a>
-        <a href="contacts.html"><div class="menu_item">Контакты</div></a>
+    <div class="menu dis_class">
+        <a href="calc.html"><div class="menu_item">Calculator</div></a>
+        <a href="index.html"><div class="menu_item">Generator</div></a>
+        <a href="contacts.html"><div class="menu_item">Contacts</div></a>
     </div>
-    <div class="owl">
+    <div class="owl dis_class">
         <img class="owl_img" src="images/owl.png" alt="">
     </div>
 </div>
@@ -34,18 +35,59 @@
     <div class="wrapper">
         <div class="inner__container">
             <div class="var">
-                <p class="title">Выражение</p>
-                <input class="expression" type="text" name="variables" value="a || b && c">
-                <img class="copy_paste__btn" src="images/paste.png" onclick="PasteText()" alt="">
+                <p class="title">Expression</p>
+                <input readonly class="expression" type="text" name="variables" value="a || b && c">
+                <img class="copy_paste__btn dis_class" src="images/paste.png" onclick="PasteText()" alt="">
             </div>
-            <button class="calc">Вычислить!</button>
-            <p class="res">Результат:</p>
+            <p class="res">Result:</p>
             <table class="res__data">
 
             </table>
         </div>
     </div>
     </body>
+
+    <div class="keyboard hide">
+        <div class="mini_btn">
+            <p>→</p>
+        </div>
+        <div class="mini_btn">
+            <p>↔</p>
+        </div>
+        <div class="mini_btn">
+            <p>∧</p>
+        </div>
+        <div class="mini_btn">
+            <p>∨</p>
+        </div>
+        <div class="mini_btn">
+            <p>¬</p>
+        </div>
+        <div class="mini_btn">
+            <p>(</p>
+        </div>
+        <div class="mini_btn">
+            <p>)</p>
+        </div>
+        <div class="mini_btn">
+            <p>a</p>
+        </div>
+        <div class="mini_btn">
+            <p>b</p>
+        </div>
+        <div class="mini_btn">
+            <p>c</p>
+        </div>
+        <div class="mini_btn">
+            <p>del</p>
+        </div>
+        <div class="mini_btn">
+            <p>clean</p>
+        </div>
+        <div class="mini_btn enter">
+            <p>enter</p>
+        </div>
+    </div>
 
     <footer>
         <p>Copyright © linkqw 2022</p>
@@ -57,6 +99,8 @@
     <script src="js/script.js"></script>
     <script src="js/logic_for_calculate.js"></script>
     <script src="js/onload.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/errorHandler.js"></script>
 </div>
 
 </html>

@@ -31,9 +31,10 @@ a {
 }
 
 body {
-    font-size: 25px;
+    font-size: 30px;
     background-color: #e1d9ce;
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
 }
 
 .wrapper {

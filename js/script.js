@@ -1,16 +1,21 @@
+// параметры цветовой темы
 let change = eval(localStorage.getItem("isChange"));
-
-const pasteFromBuffer = document.querySelector(".copy_paste__btn");
-const textareaPaste = document.querySelector(".res__data");
-
 let condition = true;
 
+// элемент, копирующий текст из поля
+const pasteFromBuffer = document.querySelector(".copy_paste__btn");
+
+// елемент, в который текст необходиом вставить
+const textareaPaste = document.querySelector(".res__data");
+
+// если пользователь сменил тему, то необходимо ее изменить при загрузке
 if (localStorage.getItem("bg-color")) {
     $('body').css('background-color', localStorage.getItem("bg-color"));
     $('body, .variables, .dificult, .subtitle, .calc').css('color', localStorage.getItem("text-color"));
     change = localStorage.getItem("isChange");
 }
 
+// анимация иконки сайта (при нажатии)
 const playScale = selector => {
     anime({
         targets: `.${selector}`,
@@ -32,6 +37,7 @@ const playScale = selector => {
     });
 };
 
+// анимация смены темы
 const switchTheme = () => {
     change = !eval(localStorage.getItem("isChange"));
     if (change) {
@@ -49,17 +55,20 @@ const switchTheme = () => {
     $('body, .variables, .dificult, .subtitle, .calc, .expression, input.res__data').css('transition', '1.5s ease');
 };
 
+// функция, копирующая текст
 const CopyText = () => {
     let area = document.querySelector('.res__data');
     area.select();
     document.execCommand("copy");
 };
 
+// функция, вставляющая текст
 const PasteText = async event => {
     textareaPaste.value = await navigator.clipboard.readText();
     $(".expression").val(textareaPaste.value);
 };
 
+// анимация открытия и скрытия меню в мобтльной версии
 const openClose = condition => {
     anime({
         targets: '.menu',
@@ -85,6 +94,7 @@ const openClose = condition => {
         : "linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.37))");
 }
 
+// создание обработчика клика на кнопку копирования
 try {
     pasteFromBuffer.addEventListener("click", PasteText, false);
 }
@@ -92,6 +102,9 @@ try {
 catch {
 
 }
+
+
+// создание обработчиков для различных элементов
 
 $('.owl').on('click', () => {
     playScale("owl");
@@ -110,6 +123,7 @@ $('.menu').click(() => {
     }
 });
 
+// медиа-запрос, изменяющий загаловки на главной странице на телефоне
 if (window.matchMedia('(max-width: 423px)').matches && location.pathname === "/Examples-generator/index.html") {
     $('.res').html('<p class="subtitle__res">Результат:<br><img class="copy_paste__btn" src="images/copy.png" onClick="CopyText()"></p>');
 }

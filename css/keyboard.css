@@ -1,0 +1,54 @@
+.keyboard {
+    display: flex;
+    flex-direction: row;
+    background-color: #e7dfd4;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin: 0 auto;
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    min-height: 20%;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    z-index: 999;
+}
+
+.mini_btn {
+    background-color: rgba(255, 250, 200, 0.271);
+    border-color: bisque;
+    font-size: 150%;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    font-weight: normal;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    margin: 0.5%;
+}
+
+.mini_btn:hover {
+    background-color: rgb(255, 250, 200);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.hide {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in;
+}
+
+.error {
+    border-color: red !important;
+}
+
+.focus {
+    border-color: green !important;
+}
